@@ -5,14 +5,17 @@ namespace algorithms
     class Helper
     {
 
-        public void ReverseSinglyLinkedList()
+        public void SinglyLinkedList()
         {
             SinglyLinkedList sll = new SinglyLinkedList();
             for (int i = 1; i < 10; i++)
-                sll.Add(i);
+            {
+                var node = new Node (i,null);
+                sll.Add(node);
+            }
 
 
-            sll.PrintAll(sll.head);
+            sll.PrintAll( sll.head);
             sll.Reverse(sll.head);
             sll.PrintAll(sll.head);
         }

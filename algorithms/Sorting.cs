@@ -6,7 +6,7 @@ public class Sorting
 
 
 // O(n^2)
-  public static void    InsertionSort (int[]  InputArr)
+  public static int[] InsertionSort (int[]  InputArr)
   { 
     int key;
     for (int j=2 ; j< InputArr.Length; j ++)

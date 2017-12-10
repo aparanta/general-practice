@@ -2,84 +2,66 @@ using System;
 
 public class Node
 {
-    public dynamic value;
+    public int value { get; set; }
     public Node next;
 
-}
-
-interface ILinkedList
-{
-
-    void Add(dynamic value);
-    void Remove(int index);
-
-}
-
-
-public class SinglyLinkedList : ILinkedList
-{
-
-    public Node head { get; set; }
-
-    public void Add(dynamic value)
+    public  Node(int value, Node next)
     {
-        Node newNode = new Node();
-        newNode.value = value;
-        Node curr;
-        curr = head;
-        if (this.head == null)
-        {
-            head = newNode;
-        }
+        this.value = value;
+        this.next = next;
 
-        else
-        {
-            while (curr.next != null)
-            {
-                curr = curr.next;
-
-            }
-
-            curr.next = newNode;
-        }
     }
+}
+ public interface iLinkedList 
+ {
+     void Add (Node newNode) ;
+     void Reverse(Node node);
 
-    public void PrintAll(Node curr)
+     void Remove (int value);
+     void PrintAll (Node head);
+
+ }
+
+public class SinglyLinkedList : iLinkedList
+{
+    public Node head {get; set;}
+    public void Add(Node newNode)
     {
-        while (curr != null)
+        var curr =this.head;
+        while (curr.next != null)
         {
-            Console.WriteLine(curr.value.ToString());
             curr = curr.next;
-
         }
-
+        curr.next =newNode;
     }
 
-    public void Reverse(Node node)
+    public void Reverse (Node node)
     {
         Node prev = null;
-        Node curr = node;
+        Node current = node;
         Node next = null;
-
-        while (curr != null)
-        {
-            next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
-
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
         }
-        this.head = prev;
+        node = prev;
+        this.head = node;
 
     }
+    public void PrintAll(Node head)
+    {
+        var curr =this.head;
+        while (curr.next != null)
+        {
+            System.Console.WriteLine (curr.value);
+            curr = curr.next;
+        }
+    }
 
-    public void Remove(int i)
+    public void Remove(int value)
     {
         throw new NotImplementedException();
-    }
-
-    public void Edit(int i, dynamic value)
-    {
-
     }
 }

@@ -8,7 +8,7 @@ namespace algorithms
         {
             Console.WriteLine("Hello World!");
             Helper help = new Helper();
-             help.InsertionSort();
+             help.SinglyLinkedList();
 
         }
     }
