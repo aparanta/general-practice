@@ -9,19 +9,21 @@ public class Sorting
   public static int[] InsertionSort (int[]  InputArr)
   { 
     int key;
-    for (int j=2 ; j< InputArr.Length; j ++)
-     {
-       key = InputArr[j] ;      
-       int i= j-1;
-       while (i>=0 && InputArr[i]>key)
-       {
-       InputArr[i+1]= InputArr[i];
-         i--;
-       }
-     InputArr[i+1]=key;
-       
+   
+   for (int i = 1 ; i<InputArr.Length ;i++)
+   {
+     key = InputArr[i];
+     int j = i-1;
+     while (j>=0 && InputArr[j]>key)
+     {//shift
+       InputArr[j+1] = InputArr[j];
+
+      j--;
      }
-    return InputArr;   
+     InputArr[j+1] = key;
+
+   }
+   return InputArr;
   }
 
  
