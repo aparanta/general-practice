@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace SingletonPattern
 {
-class LoadBalancer
+internal sealed class LoadBalancer
 {
-     private static LoadBalancer _instance;
+    private static LoadBalancer _instance;
     private List<string> _servers = new List<string>();
     private Random _random = new Random();
  
@@ -13,7 +13,7 @@ class LoadBalancer
     private static object syncLock = new object();
  
     // Constructor (protected)
-    protected LoadBalancer()
+    private LoadBalancer()
     {
       // List of available servers
       _servers.Add("ServerI");
