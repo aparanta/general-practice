@@ -12,12 +12,12 @@ internal sealed class LoadBalancer
     // Lock synchronization object
     private static object syncLock = new object();
  
-    // Constructor (protected)
+    // Constructor (private)
     private LoadBalancer()
     {
       // List of available servers
       _servers.Add("ServerI");
-      _servers.Add("ServerII");
+     _servers.Add("ServerII");
       _servers.Add("ServerIII");
       _servers.Add("ServerIV");
       _servers.Add("ServerV");
@@ -42,7 +42,7 @@ internal sealed class LoadBalancer
  
       return _instance;
     }
- 
+
     // Simple, but effective random load balancer
     public string Server
     {
