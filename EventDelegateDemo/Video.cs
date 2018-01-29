@@ -1,6 +1,13 @@
+using System;
+using System.Threading;
+
 namespace EventDelegateDemo
 {
-    internal class Video
+    public class Video
     {
+       public string Title {get;set;}
+       
     }
+
+    
 }
