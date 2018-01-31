@@ -16,6 +16,8 @@ namespace birthday_chocolate
         string s = Console.ReadLine();
         int result = twoCharaters(s);
         Console.WriteLine(result);
+        Console.WriteLine(result);
+
     }
 
 
